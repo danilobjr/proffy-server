@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build": "tsc -p && knex --knexfile build/knexfile.js migrate:latest",
     "dev": "tsnd --ignore-watch node_modules --respawn src/index.ts",
+    "start": "node build/index.js",
     "migrate:latest": "knex --knexfile src/knexfile.ts migrate:latest"
   },
   "devDependencies": {
